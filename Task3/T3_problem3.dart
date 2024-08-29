@@ -1,9 +1,10 @@
-import 'dart:io';
-
-void main(){
-   double radius=0.01*1/25;
-   print("enter the number of layers");
-   String? layers=stdin.readLineSync();
-   print("multiplier is:${radius*int.parse(layers!)}"); 
+import 'dart:math';
+double stackHeight2d(int layers) {
+  if(layers==0){
+    return 0.0;
+  }
+  else{
+    return (layers-1)*sqrt(3)/2+1;
+  }
 }
 

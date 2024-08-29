@@ -1,21 +1,12 @@
-import 'dart:io';
-List<int> number=[];
-void main(){
-   print("Enter your numbers (0 to stop):");
-  String? input = stdin.readLineSync();
-  while (input != '0') {
-    number.add(int.parse(input!));
-    input = stdin.readLineSync();
-  }
-  findLargestPossibleNum(number);
-}
-void findLargestPossibleNum(List<int> list) {
-  List<int> listEdit=list.map((number) => (number * number)).toList();
-  int sum=0;
-  for (int i = 0; i <list.length; i++) {
+import'dart:core';
+num squareSum(List numbers) {
+   var listEdit=numbers.map((number) => (number * number)).toList();
+  num sum=0;
+  for (int i = 0; i <numbers.length; i++) {
    sum+=listEdit[i];
   }
-  print("Your lest is: $list");
+  print("Your lest is: $numbers");
   print("your updated lest is :$listEdit");
   print ("your sum is :$sum");
+  return sum;
 }
